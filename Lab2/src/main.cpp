@@ -1,5 +1,5 @@
-
-#include <GL/glew.h>
+//#include <GL/glew.h>   
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <stdlib.h>
 #include <iostream>
@@ -48,9 +48,16 @@ int main()
     glfwMakeContextCurrent(window);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
-    glewExperimental = GL_TRUE;
-    glewInit();
+    //Usar si se usa la libreria glew
+    /*glewExperimental = GL_TRUE; 
+    glewInit();*/
 
+    //Usar si se usa la libreria glad
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+    {
+        cout<<"Failed to initialize GLAD"<<std::endl;
+        return -1;
+    }
 
     const GLubyte* renderer = glGetString(GL_RENDERER);
     const GLubyte* version = glGetString(GL_VERSION);
@@ -126,13 +133,11 @@ int main()
         //cout<<redValue<<endl;
         glClearColor(abs(redValue-1),0.0f,0.0f,1.0f);
         
-        // update shader uniform
         float timeValue = glfwGetTime();
         float blueValue = sin(timeValue) / 2.0f + 0.5f;
         int vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
         glUniform4f(vertexColorLocation, 0.0f,0.0f,blueValue, 1.0f);
 
-        // render the triangle
         glDrawArrays(GL_TRIANGLES, 0, 3);
         glfwSwapBuffers(window);
         glfwPollEvents();
