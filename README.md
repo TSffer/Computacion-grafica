@@ -3,3 +3,6 @@ Curso de Computacion grafica
 
 ## Lab1:
 Primer entreable, se incluye dos métodos en cmake para contruir el proyeto en linux, se incluyen los ejecutables. En caso de alguna falla se proporciona un makefile. 
+
+## Lab2:
+Dibuja un triangulo, alterna el como del triangulo y del fondo.
