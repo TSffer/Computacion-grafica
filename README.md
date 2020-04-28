@@ -9,3 +9,6 @@ Dibuja un triangulo, alterna el color del triangulo y del fondo.
 
 ## Lab3:
 Cambio de color del fondo con teclado, compilar con cmake y librerias anteriores.
+
+## Lab4:
+Cambio de color del triangulo por teclado, compilar con cmake y librerias anteriores.
