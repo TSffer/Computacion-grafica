@@ -6,3 +6,6 @@ Primer entreable, se incluye dos métodos en cmake para contruir el proyeto en l
 
 ## Lab2:
 Dibuja un triangulo, alterna el color del triangulo y del fondo.
+
+## Lab3:
+Cambio de color del fondo con teclado, compilar con cmake y librerias anteriores.
