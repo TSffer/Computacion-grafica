@@ -12,3 +12,9 @@ Cambio de color del fondo con teclado, compilar con cmake y librerias anteriores
 
 ## Lab4:
 Cambio de color del triangulo por teclado, compilar con cmake y librerias anteriores.
+
+## Triangulo de sierpinski:
+Implementacion, Animacion
+
+## Transformacion Casa:
+Silueta de una casa (un cuadrado y triangulo), aplicado con matrices, rotacion, translado, escala.
