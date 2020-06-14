@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/TRIANGLE.dir/src/main.cpp.o  -o TRIANGLE   -L/home/luis/Documentos/github/Computacion-grafica/Examen/lib  -Wl,-rpath,/home/luis/Documentos/github/Computacion-grafica/Examen/lib libraries/glfw/src/libglfw3.a -lGL -lGLU -lX11 -lm libglad.a -ldl -lpthread /usr/lib/x86_64-linux-gnu/librt.so -lm -ldl 

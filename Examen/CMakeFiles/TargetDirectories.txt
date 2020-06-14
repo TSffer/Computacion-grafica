@@ -1,0 +1,9 @@
+/home/luis/Documentos/github/Computacion-grafica/Examen/CMakeFiles/rebuild_cache.dir
+/home/luis/Documentos/github/Computacion-grafica/Examen/CMakeFiles/TRIANGLE.dir
+/home/luis/Documentos/github/Computacion-grafica/Examen/CMakeFiles/edit_cache.dir
+/home/luis/Documentos/github/Computacion-grafica/Examen/CMakeFiles/glad.dir
+/home/luis/Documentos/github/Computacion-grafica/Examen/libraries/glfw/CMakeFiles/rebuild_cache.dir
+/home/luis/Documentos/github/Computacion-grafica/Examen/libraries/glfw/CMakeFiles/edit_cache.dir
+/home/luis/Documentos/github/Computacion-grafica/Examen/libraries/glfw/src/CMakeFiles/rebuild_cache.dir
+/home/luis/Documentos/github/Computacion-grafica/Examen/libraries/glfw/src/CMakeFiles/glfw.dir
+/home/luis/Documentos/github/Computacion-grafica/Examen/libraries/glfw/src/CMakeFiles/edit_cache.dir

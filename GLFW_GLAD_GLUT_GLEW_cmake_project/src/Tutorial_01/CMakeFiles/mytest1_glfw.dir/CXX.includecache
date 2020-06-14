@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/luis/Escritorio/GLFW_GLAD_GLUT_GLEW_cmake_project_Windows_Linux/GLFW_GLAD_GLUT_GLEW_cmake_project/src/Tutorial_01/main.cpp
+glad/glad.h
+-
+glfw/glfw3.h
+-
+iostream
+-
+
