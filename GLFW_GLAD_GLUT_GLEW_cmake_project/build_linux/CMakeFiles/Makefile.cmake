@@ -11,9 +11,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.17.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.17.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.17.3/CMakeSystem.cmake"
+  "../src/CG-PRACTiCAP/CMakeLists.txt"
   "../src/CMakeLists.txt"
-  "../src/mytest1_glfw/CMakeLists.txt"
-  "../src/mytest1_glut/CMakeLists.txt"
   "/snap/cmake/372/share/cmake-3.17/Modules/CMakeCInformation.cmake"
   "/snap/cmake/372/share/cmake-3.17/Modules/CMakeCXXInformation.cmake"
   "/snap/cmake/372/share/cmake-3.17/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
@@ -48,12 +47,10 @@ set(CMAKE_MAKEFILE_OUTPUTS
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "src/mytest1_glfw/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "src/mytest1_glut/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/CG-PRACTiCAP/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "src/mytest1_glfw/CMakeFiles/mytest1_glfw.dir/DependInfo.cmake"
-  "src/mytest1_glut/CMakeFiles/mytest1_glut.dir/DependInfo.cmake"
+  "src/CG-PRACTiCAP/CMakeFiles/mytest1_glfw.dir/DependInfo.cmake"
   )

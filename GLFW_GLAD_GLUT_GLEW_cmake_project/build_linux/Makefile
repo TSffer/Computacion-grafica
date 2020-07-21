@@ -68,10 +68,10 @@ RM = /snap/cmake/372/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/luis/Escritorio/GLFW_GLAD_GLUT_GLEW_cmake_project_Windows_Linux/GLFW_GLAD_GLUT_GLEW_cmake_project
+CMAKE_SOURCE_DIR = /home/luis/Documentos/github/Computacion-grafica/GLFW_GLAD_GLUT_GLEW_cmake_project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/luis/Escritorio/GLFW_GLAD_GLUT_GLEW_cmake_project_Windows_Linux/GLFW_GLAD_GLUT_GLEW_cmake_project/build_linux
+CMAKE_BINARY_DIR = /home/luis/Documentos/github/Computacion-grafica/GLFW_GLAD_GLUT_GLEW_cmake_project/build_linux
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/luis/Escritorio/GLFW_GLAD_GLUT_GLEW_cmake_project_Windows_Linux/GLFW_GLAD_GLUT_GLEW_cmake_project/build_linux/CMakeFiles /home/luis/Escritorio/GLFW_GLAD_GLUT_GLEW_cmake_project_Windows_Linux/GLFW_GLAD_GLUT_GLEW_cmake_project/build_linux/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luis/Documentos/github/Computacion-grafica/GLFW_GLAD_GLUT_GLEW_cmake_project/build_linux/CMakeFiles /home/luis/Documentos/github/Computacion-grafica/GLFW_GLAD_GLUT_GLEW_cmake_project/build_linux/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/luis/Escritorio/GLFW_GLAD_GLUT_GLEW_cmake_project_Windows_Linux/GLFW_GLAD_GLUT_GLEW_cmake_project/build_linux/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luis/Documentos/github/Computacion-grafica/GLFW_GLAD_GLUT_GLEW_cmake_project/build_linux/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -140,21 +140,8 @@ mytest1_glfw: cmake_check_build_system
 
 # fast build rule for target.
 mytest1_glfw/fast:
-	$(MAKE) $(MAKESILENT) -f src/mytest1_glfw/CMakeFiles/mytest1_glfw.dir/build.make src/mytest1_glfw/CMakeFiles/mytest1_glfw.dir/build
+	$(MAKE) $(MAKESILENT) -f src/CG-PRACTiCAP/CMakeFiles/mytest1_glfw.dir/build.make src/CG-PRACTiCAP/CMakeFiles/mytest1_glfw.dir/build
 .PHONY : mytest1_glfw/fast
-
-#=============================================================================
-# Target rules for targets named mytest1_glut
-
-# Build rule for target.
-mytest1_glut: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mytest1_glut
-.PHONY : mytest1_glut
-
-# fast build rule for target.
-mytest1_glut/fast:
-	$(MAKE) $(MAKESILENT) -f src/mytest1_glut/CMakeFiles/mytest1_glut.dir/build.make src/mytest1_glut/CMakeFiles/mytest1_glut.dir/build
-.PHONY : mytest1_glut/fast
 
 # Help Target
 help:
@@ -165,7 +152,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... mytest1_glfw"
-	@echo "... mytest1_glut"
 .PHONY : help
 
 

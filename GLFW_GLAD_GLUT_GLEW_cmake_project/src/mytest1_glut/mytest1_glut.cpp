@@ -71,30 +71,30 @@ void deleteBuffers() {
 // The partner function below it draws the object 
 void initobject(GLuint object, GLfloat * vert, GLint sizevert, GLfloat * col, GLint sizecol, GLubyte * inds, GLint sizeind, GLenum type)
 {
-  int offset = object * numperobj;
-  glBindVertexArray(VAOs[object]);
-  glBindBuffer(GL_ARRAY_BUFFER, buffers[Vertices+offset]) ; 
-  glBufferData(GL_ARRAY_BUFFER, sizevert, vert,GL_STATIC_DRAW);
-  // Use layout location 0 for the vertices
-  glEnableVertexAttribArray(0);
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), 0);
-  glBindBuffer(GL_ARRAY_BUFFER, buffers[Colors+offset]) ; 
-  glBufferData(GL_ARRAY_BUFFER, sizecol, col,GL_STATIC_DRAW);
-  // Use layout location 1 for the colors
-  glEnableVertexAttribArray(1);
-  glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), 0);
-  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, buffers[Elements+offset]) ; 
-  glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeind, inds,GL_STATIC_DRAW);
-  PrimType[object] = type;
-  NumElems[object] = sizeind;
-  // Prevent further modification of this VAO by unbinding it
-  glBindVertexArray(0);
+	int offset = object * numperobj;
+	glBindVertexArray(VAOs[object]);
+	glBindBuffer(GL_ARRAY_BUFFER, buffers[Vertices+offset]) ; 
+	glBufferData(GL_ARRAY_BUFFER, sizevert, vert,GL_STATIC_DRAW);
+	// Use layout location 0 for the vertices
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), 0);
+	glBindBuffer(GL_ARRAY_BUFFER, buffers[Colors+offset]) ; 
+	glBufferData(GL_ARRAY_BUFFER, sizecol, col,GL_STATIC_DRAW);
+	// Use layout location 1 for the colors
+	glEnableVertexAttribArray(1);
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), 0);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, buffers[Elements+offset]) ; 
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeind, inds,GL_STATIC_DRAW);
+	PrimType[object] = type;
+	NumElems[object] = sizeind;
+	// Prevent further modification of this VAO by unbinding it
+	glBindVertexArray(0);
 }
 
 void drawobject(GLuint object) {
-  glBindVertexArray(VAOs[object]);
-  glDrawElements(PrimType[object], NumElems[object], GL_UNSIGNED_BYTE, 0); 
-  glBindVertexArray(0);
+	glBindVertexArray(VAOs[object]);
+	glDrawElements(PrimType[object], NumElems[object], GL_UNSIGNED_BYTE, 0); 
+	glBindVertexArray(0);
 }
 
 /****************   BASIC SETUP FOR DRAWING OBJECTS ***********************/
@@ -102,27 +102,27 @@ void drawobject(GLuint object) {
 
 void display(void)
 {
-  /* Clear all pixels  */
-  glClear (GL_COLOR_BUFFER_BIT);
+	/* Clear all pixels  */
+	glClear (GL_COLOR_BUFFER_BIT);
 
-  // draw polygon (square) of unit length centered at the origin
-  // Note that vertices must generally go counterclockwise
-  // This code draws each vertex in a different color.  
-  // The hardware will blend between them.  
-  // This is a useful debugging trick.  I can make sure that each vertex 
-  // appears exactly where I expect it to appear.
+	// draw polygon (square) of unit length centered at the origin
+	// Note that vertices must generally go counterclockwise
+	// This code draws each vertex in a different color.  
+	// The hardware will blend between them.  
+	// This is a useful debugging trick.  I can make sure that each vertex 
+	// appears exactly where I expect it to appear.
 
-  // The old OpenGL code of using glBegin... glEnd no longer appears. 
-  // The new version uses vertex array and vertex buffer objects from init.   
+	// The old OpenGL code of using glBegin... glEnd no longer appears. 
+	// The new version uses vertex array and vertex buffer objects from init.   
 
-  drawobject(FLOOR) ;
-  drawobject(FLOOR2) ; 
+	drawobject(FLOOR) ;
+	drawobject(FLOOR2) ; 
 
 
-  /* don't wait!  
-   * start processing buffered OpenGL routines 
-   */
-  glFlush ();
+	/* don't wait!  
+	* start processing buffered OpenGL routines 
+	*/
+	glFlush ();
 }
 
 /* Defines a Mouse callback to zoom in and out */
@@ -131,73 +131,73 @@ void display(void)
 /* mouse simply sets state for mousedrag       */
 void mouse_callback(int button, int state, int x, int y) 
 {
-  if (button == GLUT_LEFT_BUTTON) 
-  {
-    if (state == GLUT_UP) 
+	if (button == GLUT_LEFT_BUTTON) 
 	{
-      // Do Nothing ;
-    }
-    else if (state == GLUT_DOWN) 
-	{
-      mouseoldx = x ; mouseoldy = y ; // so we can move wrt x , y 
-    }
-  }
-  else if (button == GLUT_RIGHT_BUTTON && state == GLUT_DOWN) 
-  { // Reset gluLookAt
-    eyeloc = 2.0 ;
-	modelview = glm::lookAt(glm::vec3(0, -eyeloc, eyeloc), glm::vec3(0, 0, 0), glm::vec3(0, 1, 1));
-	// Send the updated matrix to the shader
-	glUniformMatrix4fv(modelviewPos, 1, GL_FALSE, &modelview[0][0]);
-    glutPostRedisplay() ;
-  }
+		if (state == GLUT_UP) 
+		{
+		// Do Nothing ;
+		}
+		else if (state == GLUT_DOWN) 
+		{
+		mouseoldx = x ; mouseoldy = y ; // so we can move wrt x , y 
+		}
+	}
+	else if (button == GLUT_RIGHT_BUTTON && state == GLUT_DOWN) 
+	{ // Reset gluLookAt
+		eyeloc = 2.0 ;
+		modelview = glm::lookAt(glm::vec3(0, eyeloc, eyeloc), glm::vec3(0, 0, 0), glm::vec3(0, -1,1));
+		// Send the updated matrix to the shader
+		glUniformMatrix4fv(modelviewPos, 1, GL_FALSE, &modelview[0][0]);
+		glutPostRedisplay() ;
+	}
 }
 
 void mousedrag_callback(int x, int y) 
 {
-  int yloc = y - mouseoldy  ;    // We will use the y coord to zoom in/out
-  
-  eyeloc  += 0.005f*yloc ;         // Where do we look from
-  
-  if (eyeloc < 0) 
-	  eyeloc = 0.0 ;
-  mouseoldy = y ;
+	int yloc = y - mouseoldy  ;    // We will use the y coord to zoom in/out
+	
+	eyeloc  += 0.005f*yloc ;         // Where do we look from
+	
+	if (eyeloc < 0) 
+		eyeloc = 0.0 ;
+	mouseoldy = y ;
 
-  // Set the eye location 
-  modelview = glm::lookAt(glm::vec3(0, -eyeloc, eyeloc), glm::vec3(0, 0, 0), glm::vec3(0, 1, 1));
-  
-  // Send the updated matrix over to the shader
-  glUniformMatrix4fv(modelviewPos, 1, GL_FALSE, &modelview[0][0]);
+	// Set the eye location 
+	modelview = glm::lookAt(glm::vec3(0, eyeloc, eyeloc), glm::vec3(0, 0, 0), glm::vec3(0, -1,1));
+	
+	// Send the updated matrix over to the shader
+	glUniformMatrix4fv(modelviewPos, 1, GL_FALSE, &modelview[0][0]);
 
-  glutPostRedisplay() ;
+	glutPostRedisplay() ;
 }
 
 /* Defines what to do when various keys are pressed */
 void keyboard_callback(unsigned char key, int x, int y)
 {
-  switch (key) 
-  {
-    case 27:  // Escape to quit
-      deleteBuffers();
-      exit(0) ;
-      break ;
-    default:
-      break ;
-  }
+	switch (key) 
+	{
+		case 27:  // Escape to quit
+		deleteBuffers();
+		exit(0) ;
+		break ;
+		default:
+		break ;
+	}
 }
 
 /* Reshapes the window appropriately */
 void reshape_callback(int w, int h)
 {
-  glViewport (0, 0, (GLsizei) w, (GLsizei) h);
+	glViewport (0, 0, (GLsizei) w, (GLsizei) h);
 
-  // Think about the rationale for this choice
-  // What would happen if you changed near and far planes? 
-  // Note that the field of view takes in a radian angle
-  if (h > 0)
-  {
-	  projection = glm::perspective(30.0f / 180.0f * glm::pi<float>(), (GLfloat)w / (GLfloat)h, 1.0f, 10.0f);
-	  glUniformMatrix4fv(projectionPos, 1, GL_FALSE, &projection[0][0]);
-  }
+	// Think about the rationale for this choice
+	// What would happen if you changed near and far planes? 
+	// Note that the field of view takes in a radian angle
+	if (h > 0)
+	{
+		projection = glm::perspective(30.0f / 180.0f * glm::pi<float>(), (GLfloat)w / (GLfloat)h, 1.0f, 10.0f);
+		glUniformMatrix4fv(projectionPos, 1, GL_FALSE, &projection[0][0]);
+	}
 }
 
 void init (void) 
@@ -209,7 +209,7 @@ void init (void)
   projection = glm::mat4(1.0f); // The identity matrix
 
   // Think about this.  Why is the up vector not normalized?
-  modelview = glm::lookAt(glm::vec3(0,-eyeloc,eyeloc), glm::vec3(0,0,0), glm::vec3(0,1,1));
+  modelview = glm::lookAt(glm::vec3(0, eyeloc, eyeloc), glm::vec3(0, 0, 0), glm::vec3(0, -1,1));
 
   // Now create the buffer objects to be used in the scene later
   // Remember to delete all the VAOs and VBOs that you create when the program terminates!
@@ -224,12 +224,12 @@ void init (void)
   std::string fragment_shader_path;
 
 #ifdef __unix__         
-  vertex_shader_path = "//home//manuel//Documents//Projects//OpenGL//GLFW_GLAD_GLUT_GLEW_cmake_project//src//mytest1_glut//shaders//nop.vert";
-  fragment_shader_path = "//home//manuel//Documents//Projects//OpenGL//GLFW_GLAD_GLUT_GLEW_cmake_project//src//mytest1_glut//shaders//nop.frag";
+	vertex_shader_path = "/home/luis/Documentos/github/Computacion-grafica/GLFW_GLAD_GLUT_GLEW_cmake_project/src/mytest1_glfw/shaders/nop.vert";
+	fragment_shader_path = "/home/luis/Documentos/github/Computacion-grafica/GLFW_GLAD_GLUT_GLEW_cmake_project/src/mytest1_glfw/shaders/nop.frag";
 
 #elif defined(_WIN32) || defined(WIN32) 
-  vertex_shader_path =  "D://Documents//Manuel//UCSP//Docencia//2020//CG//Laboratorio//GLFW_GLAD_GLUT_GLEW_cmake_project//src//mytest1_glut//shaders//nop.vert";
-  fragment_shader_path =  "D://Documents//Manuel//UCSP//Docencia//2020//CG//Laboratorio//GLFW_GLAD_GLUT_GLEW_cmake_project//src//mytest1_glut//shaders//nop.frag";
+	vertex_shader_path = "/home/luis/Documentos/github/Computacion-grafica/GLFW_GLAD_GLUT_GLEW_cmake_project/src/mytest1_glfw/shaders/nop.vert";
+	fragment_shader_path = "/home/luis/Documentos/github/Computacion-grafica/GLFW_GLAD_GLUT_GLEW_cmake_project/src/mytest1_glfw/shaders/nop.frag";
 #endif
 
 
@@ -264,7 +264,7 @@ int main(int argc, char** argv)
 
   GLenum err = glewInit(); 
   if (GLEW_OK != err) {
-    std::cerr << "Error: " << glewGetString(err) << std::endl;
+	std::cerr << "Error: " << glewGetString(err) << std::endl;
   }
 
   init (); // Always initialize first
