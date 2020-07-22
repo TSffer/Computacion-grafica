@@ -83,12 +83,24 @@ En nuestro caso el algoritmo utilizado para realizar el solver, toma como entrad
 
 
 
+##  4. Compilación del proyecto
+
+El proyecto esta formado por dos carpteas, es necesario compilar las dos carpetas.
+
+Cambiar las rutas de las rutas de los archivos:
+
+ - CG-PRACTiCAP/mytest1\_glfw.cpp.
+ - Rubik\_Solver/Solver.cpp.     
+ - Cambiar de CG-PRACTiCAP/mytest1\_glfw.cpp: string cadena="/home/angelcs/Escritorio/CUBICJ $"+Cgiros+'"'+">SomeFileC.txt"$;
+ 
+  - mover el ejecutable CUBICJ al escritorio.
 
 
+##  5. Referencias
 
+[1] Heise, Ryan. Rubik’s Cube Theory. This has some advanced discussion about reachable permutations and orientations of the cubies.
 
-
-
+[2] Scherphuis, Jaap. Thistlethwaite, Morwen. Thistlethwaite’s 52-move algorithm. Jaap has an overview of the algorithm, as well as scans of a letter from Thistlethwaite
 
 
 
