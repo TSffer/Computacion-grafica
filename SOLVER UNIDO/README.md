@@ -32,7 +32,25 @@ Cada cubo por otro lado tiene una función de dibujo, con el que se renderiza pa
 
 Para el caso de la cámara se ha realizado algunas implementaciones para poder manipular esta, en la subsección de controles, especificamos cuales son las formas de manipular la cámara.
 
+![Cubo1](https://github.com/TSffer/Computacion-grafica/blob/master/SOLVER%20UNIDO/IMG/Cubo1.png)
 
+![Cubo2](https://github.com/TSffer/Computacion-grafica/blob/master/SOLVER%20UNIDO/IMG/Cubo2.png)
+
+### 2.2 Funcionalidades del programa
+
+En esta sección describimos las funcionalidades y la forma de interacción con nuestro cubo de rubik para manipularlo.
+
+#### 2.2.1 Rotación de camadas
+
+En nuestra implementación es posible la rotación por camadas en los ejes x, y, z. Para esto al momento de rotar los vértices, es necesario rotar tambien el vector Rubik que contiene los 27 cubos, en realidad es un update, para luego en caso de otras rotaciones no tener inconvenientes. Asi mismo es posible ver un efecto al momento de realizar el giro, un efecto visual de rotación lenta.
+
+#### 2.2.1 Controles
+
+En la tabla 1 mostramos las distintas funcionalidades para interactuar con el programa.
+
+### 2.3 Problemas en la Implementación
+
+Ciertamente fue muy difícil conseguir el cubo con textura, ya que tuvimos algunos problemas, sin embargo todo se soluciono, y el próximo problema y reto es juntar la implementación con el solver. Una ves resuelto el Solver, nuestro siguiente paso es realizar un cubo de Rubik formado a su vez por otros cubos de rubik, estos cubos menores tienen que desordenarse poco a poco, y ademas separarse del centro, y posteriormente ordenarse y mientras se ordenan deben volver a su posición inicial para formar un cubo mayor ordenado.
 
 
 ## 3.  Algoritmo de Thistlethwaite para resolver el Cubo Rubik
@@ -53,4 +71,21 @@ Una letra seguida de un apóstrofe significa girar esa cara en sentido antihorar
 Una letra con el número 2 después de la letra significa un doble giro (180 grados):
 
 ![Rotación_3](https://github.com/TSffer/Computacion-grafica/blob/master/SOLVER%20UNIDO/IMG/R3.png)
+
+###  3.2 Integración con el Solver
+
+En nuestro caso el algoritmo utilizado para realizar el solver, toma como entradas un serie aleatoria de rotaciones, lo que se traduce en un un cubo de inicio desordenado aleatoriamente, a partir de este punto inicial, resuelve el cubo y nos muestra como salida otra serie de pasos de rotaciones para llegar a la solución. Aprovechando de esto, nosotros unimos ambos programas, es decir si queremos desordenar el cubo, generamos una serie aleatoria de giros, que a su ves nos servirán como datos de entrada a nuestro algoritmo solver, una ves realizado esto, si queremos ordenarlo, ejecutamos el algoritmo de solver lo que nos devuelve una serie de paso a seguir para solucionar, esto en nuestro aso se almacena en un txt que es leído por nuestro programa principal y simplemente luego se utiliza para resolver el cubo de Rubik. Tanto al momento de desordenar y ordenar el cubo se puede apreciar los efectos en las rotaciones.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
