@@ -92,16 +92,19 @@ clean: src/clean
 
 # Recursive "all" directory target.
 src/all: src/CG-PRACTiCAP/all
+src/all: src/Rubik_Solver/all
 
 .PHONY : src/all
 
 # Recursive "preinstall" directory target.
 src/preinstall: src/CG-PRACTiCAP/preinstall
+src/preinstall: src/Rubik_Solver/preinstall
 
 .PHONY : src/preinstall
 
 # Recursive "clean" directory target.
 src/clean: src/CG-PRACTiCAP/clean
+src/clean: src/Rubik_Solver/clean
 
 .PHONY : src/clean
 
@@ -124,13 +127,31 @@ src/CG-PRACTiCAP/clean: src/CG-PRACTiCAP/CMakeFiles/mytest1_glfw.dir/clean
 .PHONY : src/CG-PRACTiCAP/clean
 
 #=============================================================================
+# Directory level rules for directory src/Rubik_Solver
+
+# Recursive "all" directory target.
+src/Rubik_Solver/all: src/Rubik_Solver/CMakeFiles/CUBICJ.dir/all
+
+.PHONY : src/Rubik_Solver/all
+
+# Recursive "preinstall" directory target.
+src/Rubik_Solver/preinstall:
+
+.PHONY : src/Rubik_Solver/preinstall
+
+# Recursive "clean" directory target.
+src/Rubik_Solver/clean: src/Rubik_Solver/CMakeFiles/CUBICJ.dir/clean
+
+.PHONY : src/Rubik_Solver/clean
+
+#=============================================================================
 # Target rules for target src/CG-PRACTiCAP/CMakeFiles/mytest1_glfw.dir
 
 # All Build rule for target.
 src/CG-PRACTiCAP/CMakeFiles/mytest1_glfw.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/CG-PRACTiCAP/CMakeFiles/mytest1_glfw.dir/build.make src/CG-PRACTiCAP/CMakeFiles/mytest1_glfw.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CG-PRACTiCAP/CMakeFiles/mytest1_glfw.dir/build.make src/CG-PRACTiCAP/CMakeFiles/mytest1_glfw.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/luis/Documentos/github/Computacion-grafica/GLFW_GLAD_GLUT_GLEW_cmake_project/build_linux/CMakeFiles --progress-num=1,2,3,4,5 "Built target mytest1_glfw"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/luis/Documentos/github/Computacion-grafica/GLFW_GLAD_GLUT_GLEW_cmake_project/build_linux/CMakeFiles --progress-num=8,9,10,11,12 "Built target mytest1_glfw"
 .PHONY : src/CG-PRACTiCAP/CMakeFiles/mytest1_glfw.dir/all
 
 # Build rule for subdir invocation for target.
@@ -149,6 +170,33 @@ mytest1_glfw: src/CG-PRACTiCAP/CMakeFiles/mytest1_glfw.dir/rule
 src/CG-PRACTiCAP/CMakeFiles/mytest1_glfw.dir/clean:
 	$(MAKE) $(MAKESILENT) -f src/CG-PRACTiCAP/CMakeFiles/mytest1_glfw.dir/build.make src/CG-PRACTiCAP/CMakeFiles/mytest1_glfw.dir/clean
 .PHONY : src/CG-PRACTiCAP/CMakeFiles/mytest1_glfw.dir/clean
+
+#=============================================================================
+# Target rules for target src/Rubik_Solver/CMakeFiles/CUBICJ.dir
+
+# All Build rule for target.
+src/Rubik_Solver/CMakeFiles/CUBICJ.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/Rubik_Solver/CMakeFiles/CUBICJ.dir/build.make src/Rubik_Solver/CMakeFiles/CUBICJ.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/Rubik_Solver/CMakeFiles/CUBICJ.dir/build.make src/Rubik_Solver/CMakeFiles/CUBICJ.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/luis/Documentos/github/Computacion-grafica/GLFW_GLAD_GLUT_GLEW_cmake_project/build_linux/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target CUBICJ"
+.PHONY : src/Rubik_Solver/CMakeFiles/CUBICJ.dir/all
+
+# Build rule for subdir invocation for target.
+src/Rubik_Solver/CMakeFiles/CUBICJ.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luis/Documentos/github/Computacion-grafica/GLFW_GLAD_GLUT_GLEW_cmake_project/build_linux/CMakeFiles 7
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/Rubik_Solver/CMakeFiles/CUBICJ.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luis/Documentos/github/Computacion-grafica/GLFW_GLAD_GLUT_GLEW_cmake_project/build_linux/CMakeFiles 0
+.PHONY : src/Rubik_Solver/CMakeFiles/CUBICJ.dir/rule
+
+# Convenience name for target.
+CUBICJ: src/Rubik_Solver/CMakeFiles/CUBICJ.dir/rule
+
+.PHONY : CUBICJ
+
+# clean rule for target.
+src/Rubik_Solver/CMakeFiles/CUBICJ.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/Rubik_Solver/CMakeFiles/CUBICJ.dir/build.make src/Rubik_Solver/CMakeFiles/CUBICJ.dir/clean
+.PHONY : src/Rubik_Solver/CMakeFiles/CUBICJ.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

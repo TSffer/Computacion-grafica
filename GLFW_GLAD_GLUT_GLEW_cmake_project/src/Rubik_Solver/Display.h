@@ -62,7 +62,6 @@ class Display {
 		unsigned int	vbo;
 		unsigned int	proj;
 		unsigned int	shaders;
-		unsigned int 	texture;
 
 		float	g_v[16] = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -2.8, -6, 1};
 		static bool	spin;

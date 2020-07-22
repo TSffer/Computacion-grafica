@@ -9,3 +9,4 @@
 #add_subdirectory( Projection_NatteRobbins  )
 #add_subdirectory( mytest1_glfwGLEW )
 add_subdirectory( CG-PRACTiCAP )
+add_subdirectory( Rubik_Solver )

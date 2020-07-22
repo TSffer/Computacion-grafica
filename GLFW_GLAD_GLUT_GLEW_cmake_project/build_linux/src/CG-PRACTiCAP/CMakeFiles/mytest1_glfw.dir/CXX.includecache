@@ -1469,6 +1469,12 @@ cstdlib
 -
 unistd.h
 -
+stdio.h
+-
+stdlib.h
+-
+time.h
+-
 stb_image.h
 -
 glm/glm.hpp
@@ -1482,6 +1488,8 @@ shader.h
 matriz.cpp
 /home/luis/Documentos/github/Computacion-grafica/GLFW_GLAD_GLUT_GLEW_cmake_project/src/CG-PRACTiCAP/matriz.cpp
 iostream
+-
+fstream
 -
 
 /home/luis/Documentos/github/Computacion-grafica/GLFW_GLAD_GLUT_GLEW_cmake_project/src/CG-PRACTiCAP/shader.h

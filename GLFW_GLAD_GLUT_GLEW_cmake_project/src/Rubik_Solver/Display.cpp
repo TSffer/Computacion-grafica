@@ -1,5 +1,4 @@
 # include "Display.h"
-# include <stb_image.h>
 
 bool Display::spin = 1;
 bool Display::go = 1;
@@ -45,8 +44,8 @@ void	Display::getshader()
 {
 	unsigned int	vertexshader;
 	unsigned int	fragmentshader;
-	const GLchar *const	vsrc = filetostr("/home/luis/Documentos/github/Computacion-grafica/GLFW_GLAD_GLUT_GLEW_cmake_project/src/Rubik_Solver/shader.vs");
-	const GLchar *const	fsrc = filetostr("/home/luis/Documentos/github/Computacion-grafica/GLFW_GLAD_GLUT_GLEW_cmake_project/src/Rubik_Solver/shader.fs");
+	const GLchar *const	vsrc = filetostr("/home/angelcs/Documentos/SEMESTRE IX/COMP GRAFICA/GLFW_GLAD_GLUT_GLEW_cmake_project/src/Rubik_Solver/shader.vs");
+	const GLchar *const	fsrc = filetostr("/home/angelcs/Documentos/SEMESTRE IX/COMP GRAFICA/GLFW_GLAD_GLUT_GLEW_cmake_project/src/Rubik_Solver/shader.fs");
 
 	vertexshader = glCreateShader(GL_VERTEX_SHADER);
 	glShaderSource(vertexshader, 1, &vsrc, NULL);
@@ -64,10 +63,6 @@ void	Display::getshader()
 	glAttachShader(shaders, vertexshader);
 	glAttachShader(shaders, fragmentshader);
 	glLinkProgram(shaders);
-
-
-	//////////////////////////////////////////////////////////////////
-
 	
 	glDeleteShader(vertexshader);
 	glDeleteShader(fragmentshader);
@@ -77,32 +72,15 @@ void	Display::getshader()
 
 void	Display::buffervertexsetup()
 {
-	float texture[] = 
-	{
-		1.0f, 1.0f,
-		1.0f, 0.0f,
-		0.0f, 0.0f,
-		0.0f, 1.0f
-	}
-
-
 	glBindVertexArray(vao);
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
-	glBufferData(GL_ARRAY_BUFFER, 6 * nv * sizeof(float), out, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, 6 * nv * sizeof(float),
+		out, GL_STATIC_DRAW);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), NULL);
 	glEnableVertexAttribArray(0);
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE,
+		6 * sizeof(float), (void*)(3 * sizeof(float)));
 	glEnableVertexAttribArray(1);
-
-	unsigned int text;
-	glGenBuffers(1, &text);
-	glBindBuffer(GL_ARRAY_BUFFER, text);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(texture), texture, GL_STATIC_DRAW);
-
-	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(float), (void*)(sizeof(float)));
-
-	glGenTextures(1, &texture);
-	glBindTexture(GL_TEXTURE_2D, texture);
 }
 
 void	Display::initbufmatrix()

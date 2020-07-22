@@ -143,6 +143,19 @@ mytest1_glfw/fast:
 	$(MAKE) $(MAKESILENT) -f src/CG-PRACTiCAP/CMakeFiles/mytest1_glfw.dir/build.make src/CG-PRACTiCAP/CMakeFiles/mytest1_glfw.dir/build
 .PHONY : mytest1_glfw/fast
 
+#=============================================================================
+# Target rules for targets named CUBICJ
+
+# Build rule for target.
+CUBICJ: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CUBICJ
+.PHONY : CUBICJ
+
+# fast build rule for target.
+CUBICJ/fast:
+	$(MAKE) $(MAKESILENT) -f src/Rubik_Solver/CMakeFiles/CUBICJ.dir/build.make src/Rubik_Solver/CMakeFiles/CUBICJ.dir/build
+.PHONY : CUBICJ/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -151,6 +164,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... CUBICJ"
 	@echo "... mytest1_glfw"
 .PHONY : help
 

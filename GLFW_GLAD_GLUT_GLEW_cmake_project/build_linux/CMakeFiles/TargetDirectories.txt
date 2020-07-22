@@ -5,3 +5,6 @@
 /home/luis/Documentos/github/Computacion-grafica/GLFW_GLAD_GLUT_GLEW_cmake_project/build_linux/src/CG-PRACTiCAP/CMakeFiles/rebuild_cache.dir
 /home/luis/Documentos/github/Computacion-grafica/GLFW_GLAD_GLUT_GLEW_cmake_project/build_linux/src/CG-PRACTiCAP/CMakeFiles/mytest1_glfw.dir
 /home/luis/Documentos/github/Computacion-grafica/GLFW_GLAD_GLUT_GLEW_cmake_project/build_linux/src/CG-PRACTiCAP/CMakeFiles/edit_cache.dir
+/home/luis/Documentos/github/Computacion-grafica/GLFW_GLAD_GLUT_GLEW_cmake_project/build_linux/src/Rubik_Solver/CMakeFiles/rebuild_cache.dir
+/home/luis/Documentos/github/Computacion-grafica/GLFW_GLAD_GLUT_GLEW_cmake_project/build_linux/src/Rubik_Solver/CMakeFiles/CUBICJ.dir
+/home/luis/Documentos/github/Computacion-grafica/GLFW_GLAD_GLUT_GLEW_cmake_project/build_linux/src/Rubik_Solver/CMakeFiles/edit_cache.dir

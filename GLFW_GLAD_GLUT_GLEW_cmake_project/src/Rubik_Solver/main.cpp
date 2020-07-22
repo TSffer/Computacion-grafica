@@ -7,7 +7,7 @@ Cube cube;
 
 void printExplanation(int phase)
 {
-	cout << YELLO << "Now doing phase " << phase << " :" << endl;
+	/*cout << YELLO << "Now doing phase " << phase << " :" << endl;
 	switch (phase){
 		case 1:
 			cout << WHITE << "First, make sure all edge pieces are correctly oriented" << endl;
@@ -29,7 +29,7 @@ void printExplanation(int phase)
 			cout << WHITE << "Finally, we solve the remaining with only half-turns!\n";
 			cout << ORANGE << "Target subgroup : {I}\n";
 			break ;
-	}
+	}*/
 }
 
 string translate(string path)
@@ -96,7 +96,7 @@ void shuffle(int ac, char **av)
 				cube.rotCube(av[1][i], num);
 			}
 	cube.getColor();
-	cout << GREEN << "Cube shuffle complete!\n";
+	//cout << GREEN << "Cube shuffle complete!\n";
 }
 
 void hashSolve(Cube *solverCube, Solver *s, string *output, Display *display)
@@ -108,7 +108,7 @@ void hashSolve(Cube *solverCube, Solver *s, string *output, Display *display)
 	for (int phase = 1; phase <= 4; phase++)
 	{
 		printExplanation(phase);
-		cout << YELLO << "Phase moves: " << endl;
+		//cout << YELLO << "Phase moves: " << endl;
 		while (s->getPhaseId(*solverCube, phase) != s->phaseGoal[phase])
 		{
 			string path = phaseHash[phase -1][s->getPhaseId(*solverCube, phase)];
@@ -117,7 +117,7 @@ void hashSolve(Cube *solverCube, Solver *s, string *output, Display *display)
 				cout << RED << "Solution not found" << endl;
 				exit(1);				
 			}
-			cout << WHITE << '\t' << translate(path) << endl;
+			//cout << WHITE << '\t' << translate(path) << endl;
 			if (path[0] != 'E')
 			{
 				display->waitlist.append(path + '+');
@@ -174,12 +174,10 @@ int main(int ac, char **av){
 		chrono::milliseconds time
 		= chrono::duration_cast<chrono::milliseconds>
 		(std::chrono::system_clock::now().time_since_epoch()) - startTime;
-		cout << GREEN << "Final output:" << endl;
-		cout << WHITE << translate(mergeExtras(output)) << endl;
-		cout << GREEN << "Total steps: " << WHITE << mergeExtras(output).size() / 2 << endl;
-		cout << GREEN << "Time to find solution: " << WHITE
-		<< static_cast<float>(time.count()) / 1000 << " seconds\n";
+		//cout << GREEN << "Final output:" << endl;
+		cout  << translate(mergeExtras(output)) << endl;
+		//cout << GREEN << "Total steps: " << WHITE << mergeExtras(output).size() / 2 << endl;
+		//cout << GREEN << "Time to find solution: " << WHITE
+		//<< static_cast<float>(time.count()) / 1000 << " seconds\n";
 	}
-	while (!glfwWindowShouldClose(display.window))
-		display.loop();
 }

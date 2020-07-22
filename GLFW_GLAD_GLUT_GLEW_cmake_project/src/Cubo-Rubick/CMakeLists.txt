@@ -61,7 +61,7 @@ if ( CMAKE_BUILD_TYPE STREQUAL "Debug")
 		message("\nOpenGL_GLUT_GLFW_Program -- Debug mode Linux ****************")
 		target_link_libraries( ${PROJECT_NAME} 
 						   ${OPENGL_LIBRARY}
-						    -lGL
+						    #-lGL
 							-lm
 							-no-pie
 							GL
