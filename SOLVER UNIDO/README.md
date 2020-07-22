@@ -28,13 +28,16 @@ En nuestro caso dividimos la imagen ÜCSPCG.jpg.en 6 distintas imágenes en la c
 
 Cada cubo por otro lado tiene una función de dibujo, con el que se renderiza para mostrar en el display
 
-#### 2.1.4 Camara
+#### 2.1.5 Camara
 
 Para el caso de la cámara se ha realizado algunas implementaciones para poder manipular esta, en la subsección de controles, especificamos cuales son las formas de manipular la cámara.
 
 ![Cubo1](https://github.com/TSffer/Computacion-grafica/blob/master/SOLVER%20UNIDO/IMG/Cubo1.png)
 
+En la Figura superior se muestra el renderizado del cubo rubick con las texturas.
+
 ![Cubo2](https://github.com/TSffer/Computacion-grafica/blob/master/SOLVER%20UNIDO/IMG/Cubo2.png)
+En la Figura superior se muestra las rotaciones y traslacion del cubo de rubick.
 
 ### 2.2 Funcionalidades del programa
 
@@ -45,6 +48,8 @@ En esta sección describimos las funcionalidades y la forma de interacción con 
 En nuestra implementación es posible la rotación por camadas en los ejes x, y, z. Para esto al momento de rotar los vértices, es necesario rotar tambien el vector Rubik que contiene los 27 cubos, en realidad es un update, para luego en caso de otras rotaciones no tener inconvenientes. Asi mismo es posible ver un efecto al momento de realizar el giro, un efecto visual de rotación lenta.
 
 #### 2.2.1 Controles
+
+![Cubo2](https://github.com/TSffer/Computacion-grafica/blob/master/SOLVER%20UNIDO/IMG/Controles.png)
 
 En la tabla 1 mostramos las distintas funcionalidades para interactuar con el programa.
 
