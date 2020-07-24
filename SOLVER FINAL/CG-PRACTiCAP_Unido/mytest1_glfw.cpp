@@ -17,6 +17,8 @@
 #include "shader.h"
 #include "matriz.cpp"
 
+#include "principal.cpp"
+
 #include <iostream>
 #include <fstream>
 
@@ -1283,11 +1285,15 @@ public:
             {
                 for (int j = 0; j < 3; ++j)
                 {
-                    Cgiros[tmp]='"'+Cgiros[tmp];
-                    string cadena="/home/angelcs/Escritorio/CUBICJ "+Cgiros[tmp]+'"'+">SomeFileC.txt";
-                    cout<<cadena<<endl;
-                    system(cadena.c_str());
-                    string s=leer_archivo();
+                    solver sol;
+                    const char *ctem="CUBICJ";
+					const char *ctem2=Cgiros[tmp].c_str();
+
+					const char *av[2];
+					av[0]=ctem;
+					av[1]=ctem2;
+
+					string s=sol.princi(2,av);
                     cout<<s<<endl;
                     vector<string> des_or=split(s,' ');
                     rubikG[k][i][j]->ordenar(des_or, window);
@@ -1620,12 +1626,17 @@ void controls(GLFWwindow* window, int key, int scancode, int action, int mods)
     }
     else if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS )
     {
-        girosT='"'+girosT;
-        string cadena="/home/angelcs/Escritorio/CUBICJ "+girosT+'"'+">SomeFileC.txt";
-        cout<<cadena<<endl;
-        system(cadena.c_str());
-        string s=leer_archivo();
-        cout<<s<<endl;
+        girosT=girosT;
+
+        solver sol;
+        const char *ctem="CUBICJ";
+        const char *ctem2=girosT.c_str();
+
+        const char *av[2];
+        av[0]=ctem;
+        av[1]=ctem2;
+
+        string s=sol.princi(2,av);
         vector<string> des_or=split(s,' ');
         principal->ordenar(des_or, window);
         girosT="";
